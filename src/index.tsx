@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Canvas} from "@react-three/fiber";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Canvas>
+          <App />
+      </Canvas>
   </React.StrictMode>,
   document.getElementById('root')
 );
