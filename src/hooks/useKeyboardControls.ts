@@ -20,15 +20,11 @@ export const useKeyboardControls = () => {
 
     React.useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            // Movement key
             if (actionByKey(e.code)) {
                 setMovement((state) => ({...state, [actionByKey(e.code)]: true}));
-
-
             }
         }
         const handleKeyUp = (e: any) => {
-            // Movement key
             if (actionByKey(e.code)) {
                 setMovement((state) => ({...state, [actionByKey(e.code)]: false}));
             }

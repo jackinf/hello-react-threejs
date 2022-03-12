@@ -2,7 +2,7 @@
 
 ## Description
 
-![](docs/readme-preview.png "Main page")
+![](docs/readme-preview.gif "Main page")
 
 ## Resources used
 

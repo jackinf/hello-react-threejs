@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useRef} from "react";
 import { Text } from "@react-three/drei";
+import {useFrame} from "@react-three/fiber";
 
-function CardText(props: any) {
+export default function Label(props: any) {
     // This element handles text elements that can then be rendered within our animation
+    const ref = useRef<Text>();
+    useFrame(() => {
+        if (ref.current) {
+            ref.current.textContent = props.text;
+        }
+    });
+
     return (
         <Text
             rotation={props.rotation}
@@ -17,4 +25,3 @@ function CardText(props: any) {
         </Text>
     );
 }
-export default CardText;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {DoubleSide} from 'three';
 
 export default function BackDrop({position, rotation, opacity}: any) {
