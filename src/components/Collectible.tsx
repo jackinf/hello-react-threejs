@@ -7,7 +7,11 @@ export default function Collectible(props: { position: number[], name: string, h
         args: [scale, scale, scale],
         type: 'Dynamic',
         position: [props.position[0], props.position[1], props.position[2]],
-        onCollide: () => props.handleCollect(),
+        onCollide: (e) => {
+            if (e.body.name === 'player') {
+                props.handleCollect();
+            }
+        },
     }));
 
     return (

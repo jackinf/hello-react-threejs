@@ -4,7 +4,8 @@ import {Coin, AppState} from "../types";
 const defaultCoins = [
     {key: '1', position: [1, 1, 0]},
     {key: '2', position: [-1, 1, 0]},
-    {key: '3', position: [1, -1, 0]}
+    {key: '3', position: [1, -1, 0]},
+    {key: '4', position: [0, 2.4, 0]},
 ];
 
 export default create((set: SetState<AppState>) => ({

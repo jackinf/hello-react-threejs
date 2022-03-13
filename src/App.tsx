@@ -8,6 +8,7 @@ import Collectible from "./components/Collectible";
 import {useKeyboardControls} from "./hooks/useKeyboardControls";
 import Player from "./components/Player";
 import useAppStore from "./hooks/useAppStore";
+import Wall from "./components/Wall";
 
 export default function App() {
     const {movement, movementText} = useKeyboardControls();
@@ -15,6 +16,8 @@ export default function App() {
     const points = useAppStore(state => state.points);
     const coins = useAppStore(state => state.coins);
     const handleCollectCoin = useAppStore(state => state.handleCollectCoin);
+
+    const defaultWallSize = .2;
 
     return (
         <>
@@ -28,6 +31,11 @@ export default function App() {
 
                 <Physics>
                     <Player movement={movement}/>
+
+                    <Wall position={[0, 2, 0]} size={[3, defaultWallSize, defaultWallSize]} />
+                    <Wall position={[-1.4, 0, 0]} size={[defaultWallSize, 4, defaultWallSize]} />
+                    <Wall position={[1.6, 1, 0]} size={[defaultWallSize, 4, defaultWallSize]} />
+                    <Wall position={[0, -2, 0]} size={[3, defaultWallSize, defaultWallSize]} />
 
                     {coins.map(coin => (
                         <Collectible
